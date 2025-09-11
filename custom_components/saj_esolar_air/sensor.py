@@ -783,9 +783,7 @@ class ESolarSensorPlantTotalEnergy(ESolarPlant):
             if plant["plantName"] == self._plant_name:
                 # Setup static attributes
                 self._attr_available = True
-                self._attr_extra_state_attributes[I_TOTAL] = plant["totalIncome"] if (
-                        "totalIncome" in plant and plant["totalIncome"] is not None and float(
-                    plant["totalIncome"]) > 0) else plant["incomeTotal"]
+                self._attr_extra_state_attributes[I_TOTAL] = plant["totalIncome"] if ("totalIncome" in plant and plant["totalIncome"] is not None and plant["totalIncome"] != '--' and float(plant["totalIncome"]) > 0.0 ) else plant["incomeTotal"]
 
                 # Setup state
                 if float(plant["totalPvEnergy"]) > 0.0:
