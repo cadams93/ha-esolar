@@ -184,7 +184,7 @@ async def async_setup_entry(
                     )
                 )
 
-            elif plant["type"] in [0,1] and "isInstallMeter" in plant and plant["isInstallMeter"] == 1:
+            elif plant["type"] in [0,1] and "hasMeter" in plant and plant["hasMeter"] == 1:
                 sources = ["todayBuyEnergy", "todayLoadEnergy", "todaySellEnergy",
                            "totalBuyEnergy", "totalLoadEnergy", "totalSellEnergy",
                            "yearBuyEnergy", "yearLoadEnergy", "yearSellEnergy",
